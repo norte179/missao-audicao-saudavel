@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#24558a">
+<title>Missão Audição Saudável</title>
+<style>
+:root{--navy:#173e68;--blue:#2869a6;--sky:#eaf6ff;--purple:#7467d9;--mint:#dff8ee;--ink:#19324d;--muted:#5e7084;--white:#fff;--gold:#ffc857}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(135deg,#eaf6ff,#f6f0ff 55%,#e8fff5);color:var(--ink);min-height:100vh}
+main{max-width:820px;margin:auto;padding:18px 14px 36px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.brand{font-weight:850;color:var(--navy);letter-spacing:.2px}.pill{background:#fff;border:1px solid #d9e7f5;border-radius:999px;padding:7px 12px;font-size:.9rem;font-weight:700}
+.panel{background:#ffffffed;border:1px solid #dce9f5;border-radius:24px;padding:clamp(20px,5vw,36px);box-shadow:0 12px 34px #25476c12}
+.hero{text-align:center;overflow:hidden;position:relative}.hero .emoji{font-size:76px;line-height:1.2}.eyebrow{font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--purple);font-weight:850}.hero h1{font-size:clamp(2rem,7vw,3.3rem);line-height:1.04;color:var(--navy);margin:10px 0}.hero p{max-width:560px;margin:12px auto 22px;color:var(--muted);font-size:1.05rem;line-height:1.6}
+h2{color:var(--navy);margin:8px 0 12px;font-size:clamp(1.4rem,4vw,2rem)}p{line-height:1.55}.btn{border:0;border-radius:14px;background:var(--purple);color:white;padding:13px 18px;font-size:1rem;font-weight:800;cursor:pointer;min-height:48px;box-shadow:0 4px 0 #5146ad;transition:transform .12s}.btn:hover{transform:translateY(-1px)}.btn:focus-visible,.choice:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.btn.secondary{background:#e9edff;color:var(--navy);box-shadow:none;border:1px solid #d7dcff}.btn.full{width:100%}.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.missions{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:20px 0}.mission{border:1px solid #dce9f5;border-radius:18px;padding:17px;background:white;text-align:left}.mission .big{font-size:35px}.mission h3{margin:8px 0 4px;color:var(--navy)}.mission p{margin:0;color:var(--muted);font-size:.92rem}.mission.done{background:var(--mint);border-color:#a5e6cd}
+.progress-wrap{height:8px;background:#e7edf5;border-radius:99px;overflow:hidden;margin:16px 0 20px}.progress{height:100%;background:linear-gradient(90deg,var(--purple),#44bca2);width:0;transition:width .25s}
+.meta{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font-size:.92rem;font-weight:750}.scene{font-size:58px;text-align:center;margin:8px 0 14px}.story{font-size:1.08rem;line-height:1.6}.choices{display:grid;gap:10px;margin:20px 0}.choice{background:white;border:2px solid #dce6f2;border-radius:15px;padding:14px 15px;text-align:left;color:var(--ink);font:inherit;cursor:pointer;line-height:1.4}.choice:hover{border-color:#a7a0f0}.choice.correct{border-color:#36a77e;background:#e8fff5}.choice.wrong{border-color:#e48b8b;background:#fff0f0}.feedback{border-radius:16px;padding:14px 16px;margin:14px 0;line-height:1.55}.feedback.good{background:#e3f8ed;border:1px solid #a9e7ca}.feedback.try{background:#fff5df;border:1px solid #f0d08b}.hidden{display:none!important}.small{font-size:.9rem;color:var(--muted)}.score{font-size:2.5rem;font-weight:900;color:var(--purple);margin:4px}.badge{display:inline-block;background:#fff2c7;color:#70500b;border-radius:999px;padding:7px 12px;font-weight:800;margin:4px}
+footer{text-align:center;color:#64768a;font-size:.8rem;padding:18px 8px}ul.tips{padding-left:21px;line-height:1.7}.button-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.button-row>*{flex:1}
+@media(max-width:480px){.top{align-items:flex-start}.panel{border-radius:20px}.button-row{flex-direction:column}.hero .emoji{font-size:64px}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><div class="brand">👂 MISSÃO AUDIÇÃO SAUDÁVEL</div><div class="pill" id="scorePill">⭐ 0 pontos</div></div>
+  <section class="panel hero" id="home">
+    <div class="eyebrow">Jogo educativo • Fonoaudiologia</div>
+    <div class="emoji" aria-hidden="true">👂🎧🔊</div>
+    <h1>Missão<br>Audição Saudável</h1>
+    <p>Você consegue completar as missões e ajudar a cuidar da audição no dia a dia? Escolha caminhos, aprenda com as situações e conquiste suas medalhas!</p>
+    <div class="missions">
+      <div class="mission"><div class="big">🎚️</div><h3>1. DJ consciente</h3><p>Faça escolhas mais seguras ao ouvir música.</p></div>
+      <div class="mission"><div class="big">🏗️</div><h3>2. Alerta de ruído</h3><p>Descubra como agir em ambientes barulhentos.</p></div>
+      <div class="mission"><div class="big">🕵️</div><h3>3. Detetive da audição</h3><p>Reconheça sinais que merecem atenção.</p></div>
+    </div>
+    <p class="small">Não precisa informar nome, e-mail ou telefone. O jogo não faz diagnóstico.</p>
+    <button class="btn full" id="startBtn">Começar as missões 🚀</button>
+  </section>
+
+  <section class="panel hidden" id="game">
+    <div class="meta"><span id="missionLabel">Missão 1 de 3</span><span id="questionLabel">Desafio 1 de 3</span></div>
+    <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+    <div class="scene" id="scene" aria-hidden="true">🎧</div>
+    <h2 id="questionTitle">Escolha sua atitude</h2>
+    <p class="story" id="story"></p>
+    <div class="choices" id="choices"></div>
+    <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+    <button class="btn full hidden" id="nextBtn">Continuar →</button>
+  </section>
+
+  <section class="panel hidden" id="results">
+    <div class="scene">🏆🌟</div>
+    <div class="eyebrow">Missões concluídas</div>
+    <h2>Você é um guardião da audição!</h2>
+    <div class="score" id="finalScore">0 pontos</div>
+    <p id="resultText"></p>
+    <div id="badges"></div>
+    <h2 style="font-size:1.25rem;margin-top:24px">Leve estas dicas com você</h2>
+    <ul class="tips">
+      <li>Use fones em volume confortável e faça pausas regulares.</li>
+      <li>Afaste-se de fontes de ruído quando puder e use proteção auditiva adequada quando necessário.</li>
+      <li>Zumbido persistente ou dificuldade para ouvir merecem avaliação profissional.</li>
+      <li>Uma perda auditiva súbita é uma urgência médica: procure atendimento imediatamente.</li>
+    </ul>
+    <p class="small">Este jogo é educativo e não substitui avaliação com profissionais de saúde.</p>
+    <div class="button-row"><button class="btn" id="restartBtn">Jogar novamente ↻</button><button class="btn secondary" id="homeBtn">Voltar ao início</button></div>
+  </section>
+  <footer>Projeto educativo: “Saúde Única: Saúde Auditiva e os Impactos da Poluição Sonora na Qualidade de Vida”.</footer>
+</main>
+<script>
+const missions = [
+ {name:"DJ consciente",icon:"🎧",items:[
+  {icon:"🎵",title:"O volume está alto!",story:"Você está ouvindo suas músicas favoritas com fones. Para perceber melhor a música, pensa em aumentar ainda mais o volume. Qual é a melhor escolha?",options:["Aumentar bastante o volume para abafar os sons ao redor.","Manter o volume confortável, fazer pausas e evitar competir com o barulho.","Usar o volume máximo só porque a música é curta."],correct:1,feedback:"Boa escolha! Sons intensos por tempo prolongado podem prejudicar a audição. Volume confortável e pausas ajudam a reduzir a exposição."},
+  {icon:"📱",title:"O ônibus está barulhento",story:"No transporte, o ruído ao redor dificulta ouvir o celular. O que você deve fazer?",options:["Aumentar o volume até não ouvir mais o ambiente.","Tentar reduzir o ruído de outra forma ou esperar um lugar mais silencioso, sem elevar demais o volume.","Colocar um segundo fone por cima do primeiro."],correct:1,feedback:"Isso! Aumentar muito o volume para competir com o ruído pode elevar o risco. Se possível, escolha um ambiente mais silencioso."},
+  {icon:"⏸️",title:"Hora de uma pausa",story:"Você está há bastante tempo usando fones. Qual atitude é mais cuidadosa?",options:["Fazer uma pausa e descansar os ouvidos.","Continuar até sentir dor.","Aumentar o volume para terminar a playlist mais rápido."],correct:0,feedback:"Perfeito! Pausas regulares reduzem o tempo de exposição sonora. Não espere sentir dor para cuidar da audição."}
+ ]},
+ {name:"Alerta de ruído",icon:"🏗️",items:[
+  {icon:"🏗️",title:"Obra na rua",story:"Você precisa passar perto de uma obra muito barulhenta. O que ajuda a cuidar da audição?",options:["Ficar perto das máquinas para se acostumar.","Se possível, manter distância e reduzir o tempo de exposição.","Ouvir música alta para não perceber o barulho."],correct:1,feedback:"Boa! Distância e menor tempo de exposição ajudam a reduzir o ruído que chega aos ouvidos."},
+  {icon:"🦺",title:"Máquinas no trabalho",story:"Uma pessoa trabalha perto de máquinas ruidosas. Qual atitude é mais adequada?",options:["Usar proteção auditiva adequada ao risco e seguir as orientações de segurança.","Usar qualquer fone de música como se fosse protetor.","Retirar a proteção sempre que o barulho incomodar."],correct:0,feedback:"Certo! Em ambientes ocupacionais, a proteção precisa ser adequada ao risco e usada conforme as orientações de segurança."},
+  {icon:"🏠",title:"Som alto em casa",story:"O som da televisão está tão alto que as pessoas precisam levantar a voz para conversar. O que pode ajudar?",options:["Aumentar mais um pouco.","Fechar as portas e continuar no mesmo volume sempre.","Diminuir o volume e buscar um nível que permita conversar confortavelmente."],correct:2,feedback:"Muito bem! Reduzir o volume ajuda a limitar o ruído e facilita a conversa. A poluição sonora também afeta conforto, sono e concentração."}
+ ]},
+ {name:"Detetive da audição",icon:"🕵️",items:[
+  {icon:"🔔",title:"Um apito no ouvido",story:"Depois de um evento barulhento, você percebe um apito no ouvido que continua ou volta com frequência. Qual é a atitude mais indicada?",options:["Ignorar sempre, porque zumbido nunca precisa de atenção.","Reduzir a exposição ao ruído e procurar avaliação profissional se persistir ou se repetir.","Colocar fones em volume alto para disfarçar."],correct:1,feedback:"Isso! Zumbido pode ter diferentes causas. Se persistir ou se repetir, procure avaliação profissional."},
+  {icon:"🗣️",title:"Entender a conversa",story:"Uma pessoa sente dificuldade para entender o que os outros dizem em locais com muito ruído. O que deve fazer?",options:["Aumentar todos os aparelhos sem investigar.","Concluir sozinha que é perda auditiva permanente.","Procurar avaliação auditiva com um profissional de saúde."],correct:2,feedback:"Correto! Dificuldade para compreender a fala merece avaliação. O profissional pode investigar as possíveis causas e orientar os próximos passos."},
+  {icon:"🚨",title:"A audição mudou de repente",story:"Ao acordar, uma pessoa percebe que perdeu parte da audição de repente, mesmo sem dor. Como deve agir?",options:["Procurar atendimento médico imediatamente.","Esperar algumas semanas para ver se melhora.","Limpar profundamente o ouvido com objetos."],correct:0,feedback:"Muito importante! Uma perda auditiva súbita é uma urgência médica, mesmo sem dor. Procure atendimento imediatamente."}
+ ]}
+];
+let missionIndex=0,itemIndex=0,score=0,answered=false,completed=0;
+const $=id=>document.getElementById(id);
+function show(id){["home","game","results"].forEach(x=>$(x).classList.toggle("hidden",x!==id))}
+function updateScore(){$("scorePill").textContent="⭐ "+score+" pontos"}
+function begin(){missionIndex=0;itemIndex=0;score=0;completed=0;updateScore();show("game");render()}
+function render(){
+ answered=false;const m=missions[missionIndex],q=m.items[itemIndex];
+ $("missionLabel").textContent=`Missão ${missionIndex+1} de ${missions.length}: ${m.name}`;
+ $("questionLabel").textContent=`Desafio ${itemIndex+1} de ${m.items.length}`;
+ $("progress").style.width=((completed/9)*100)+"%";
+ $("scene").textContent=q.icon;$("questionTitle").textContent=q.title;$("story").textContent=q.story;
+ $("feedback").className="feedback hidden";$("feedback").textContent="";$("nextBtn").classList.add("hidden");
+ $("choices").innerHTML="";
+ q.options.forEach((opt,i)=>{const b=document.createElement("button");b.className="choice";b.textContent=String.fromCharCode(65+i)+") "+opt;b.addEventListener("click",()=>choose(i));$("choices").appendChild(b)});
+}
+function choose(i){
+ if(answered)return;answered=true;const q=missions[missionIndex].items[itemIndex];const btns=[...$("choices").querySelectorAll("button")];
+ btns.forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.classList.add("correct");else if(j===i)b.classList.add("wrong")});
+ if(i===q.correct)score+=10;
+ completed++;updateScore();$("progress").style.width=((completed/9)*100)+"%";
+ $("feedback").className="feedback "+(i===q.correct?"good":"try");
+ $("feedback").textContent=(i===q.correct?"✨ Mandou bem! +10 pontos. ":"💡 Boa oportunidade para aprender! ")+q.feedback;
+ $("nextBtn").classList.remove("hidden");
+ $("nextBtn").textContent=(itemIndex===2&&missionIndex===2)?"Ver meu resultado 🏆":"Próximo desafio →";
+}
+function next(){
+ if(!answered)return;
+ if(itemIndex<2){itemIndex++}else if(missionIndex<2){missionIndex++;itemIndex=0}else{finish();return}
+ render();
+}
+function finish(){
+ show("results");$("finalScore").textContent=score+" / 90 pontos";
+ $("resultText").textContent=score>=70?"Excelente! Você fez escolhas conscientes e aprendeu atitudes para proteger a audição.":score>=40?"Bom trabalho! Você completou as missões e já pode colocar novas atitudes em prática.":"Missões concluídas! Leia as dicas e jogue novamente para reforçar o que aprendeu.";
+ const badges=[];if(score>=30)badges.push("🎧 DJ consciente");if(score>=60)badges.push("🛡️ Protetor do som");if(score===90)badges.push("🏆 Guardião da audição");
+ $("badges").innerHTML=badges.map(b=>`<span class="badge">${b}</span>`).join("")||'<span class="badge">🌱 Primeiro passo concluído</span>';
+}
+$("startBtn").addEventListener("click",begin);$("nextBtn").addEventListener("click",next);$("restartBtn").addEventListener("click",begin);$("homeBtn").addEventListener("click",()=>show("home"));
+</script>
+</body>
+</html>
